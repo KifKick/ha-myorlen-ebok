@@ -1,0 +1,13 @@
+{
+  "Agreements": [
+    {
+      "AgreementNumber": "RW/UKPG/0001/2025",
+      "PpNumber": "8018000000000000000001",
+      "Active": true,
+      "Saldo": 0.0,
+      "Tariff": "W-1.12T",
+      "StartDate": "2025-03-11T00:00:00.000000Z",
+      "EndDate": null
+    }
+  ]
+}

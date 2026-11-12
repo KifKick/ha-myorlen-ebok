@@ -1,0 +1,192 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "myORLEN eBOK",
+        "description": "Gas meter, invoices and payments from ebok.myorlen.pl.",
+        "data": {
+          "auth_method": "Login method",
+          "username": "E-mail or customer number",
+          "password": "Password"
+        },
+        "data_description": {
+          "auth_method": "How you log in at ebok.myorlen.pl: eBOK login and password, or the ORLEN ID account (it may send an SMS code).",
+          "username": "The login you use at ebok.myorlen.pl."
+        }
+      },
+      "mfa": {
+        "title": "SMS code",
+        "description": "ORLEN ID sent a code to your phone. Enter the latest one.",
+        "data": {
+          "mfa_code": "Code"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Log in again",
+        "description": "The eBOK session has expired. Enter the password again.",
+        "data": {
+          "password": "Password"
+        }
+      },
+      "reconfigure": {
+        "title": "Change login",
+        "data": {
+          "auth_method": "Login method",
+          "username": "E-mail or customer number",
+          "password": "Password"
+        },
+        "data_description": {
+          "auth_method": "How you log in at ebok.myorlen.pl: eBOK login and password, or the ORLEN ID account (it may send an SMS code).",
+          "username": "The login you use at ebok.myorlen.pl."
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "eBOK rejected the login or password.",
+      "cannot_connect": "Cannot reach eBOK. Try again later.",
+      "mfa_invalid": "Wrong code. Enter the latest SMS code.",
+      "mfa_expired": "The SMS step expired. Log in again."
+    },
+    "abort": {
+      "already_configured": "This account is already configured.",
+      "no_meters": "The account has no gas meter.",
+      "wrong_account": "This is a different eBOK account.",
+      "reauth_successful": "Logged in again.",
+      "reconfigure_successful": "Login changed."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "myORLEN eBOK options",
+        "data": {
+          "update_interval": "Update interval"
+        },
+        "data_description": {
+          "update_interval": "How often eBOK is polled. Invoices and payment states change at most a few times a day."
+        }
+      }
+    }
+  },
+  "selector": {
+    "auth_method": {
+      "options": {
+        "password": "eBOK login and password",
+        "orlen_id": "ORLEN ID"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "reading": {
+        "name": "Meter reading"
+      },
+      "reading_date": {
+        "name": "Reading date"
+      },
+      "to_pay": {
+        "name": "To pay"
+      },
+      "due_date": {
+        "name": "Payment due"
+      },
+      "last_invoice": {
+        "name": "Last invoice"
+      },
+      "cost_per_m3": {
+        "name": "Cost per m³"
+      },
+      "balance": {
+        "name": "Balance"
+      },
+      "last_payment": {
+        "name": "Last payment"
+      },
+      "bill_estimate": {
+        "name": "Bill estimate"
+      }
+    },
+    "binary_sensor": {
+      "overdue": {
+        "name": "Overdue payment"
+      }
+    },
+    "calendar": {
+      "invoices": {
+        "name": "Invoices"
+      }
+    },
+    "event": {
+      "notices": {
+        "name": "eBOK notices",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "notice": "Notice"
+            }
+          }
+        }
+      }
+    },
+    "button": {
+      "refresh": {
+        "name": "Refresh"
+      }
+    }
+  },
+  "services": {
+    "add_reading": {
+      "name": "Submit meter reading",
+      "description": "Sends the gas meter reading to eBOK, like the website's reading form. Orlen bills from this value - check it against the meter.",
+      "fields": {
+        "device_id": {
+          "name": "Meter",
+          "description": "The gas meter."
+        },
+        "value": {
+          "name": "Reading",
+          "description": "Meter state in m³, whole units as on the meter."
+        },
+        "date": {
+          "name": "Date",
+          "description": "Reading date; today when empty."
+        },
+        "meter_reset": {
+          "name": "Meter replaced",
+          "description": "Allow a value lower than the last reading (new or rolled-over meter)."
+        },
+        "confirm_large_increase": {
+          "name": "Confirm large increase",
+          "description": "Allow a value much higher than the last reading."
+        }
+      }
+    },
+    "refresh": {
+      "name": "Refresh",
+      "description": "Fetches eBOK data now."
+    }
+  },
+  "exceptions": {
+    "not_a_meter": {
+      "message": "The device is not a myORLEN eBOK meter."
+    },
+    "not_loaded": {
+      "message": "The meter's account is not loaded."
+    },
+    "reading_lower": {
+      "message": "{value} m³ is lower than the last reading ({last} m³). If the meter was replaced, set meter_reset."
+    },
+    "reading_too_high": {
+      "message": "{value} m³ is more than {limit} m³ above the last reading ({last} m³). If correct, set confirm_large_increase."
+    },
+    "reading_rejected": {
+      "message": "eBOK rejected the reading: {message}"
+    },
+    "auth_failed": {
+      "message": "The eBOK login is no longer valid; log in again."
+    },
+    "request_failed": {
+      "message": "eBOK request failed: {error}"
+    }
+  }
+}

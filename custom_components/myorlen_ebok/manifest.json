@@ -1,0 +1,14 @@
+{
+  "domain": "myorlen_ebok",
+  "name": "myORLEN eBOK",
+  "after_dependencies": ["recorder"],
+  "codeowners": ["@KifKick"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/KifKick/ha-myorlen-ebok",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/KifKick/ha-myorlen-ebok/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

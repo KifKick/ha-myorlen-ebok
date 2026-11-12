@@ -1,0 +1,11 @@
+{
+  "AlertList": [
+    {
+      "Id": 54,
+      "Title": "Phishing",
+      "Content": "<p><b>Uwaga na fałszywe wiadomości e-mail!&nbsp;</b>Informujemy, że do części naszych Klientów mogą trafiać fałszywe wiadomości e-mail dotyczące nadpłaty lub zaległości na koncie.&nbsp;Wiadomości te mają na celu wyłudzenie danych lub pieniędzy. Więcej informacji na stronie&nbsp;<a href=\"https://myorlen.pl/falszywe-maile\" target=\"_blank\" style=\"background-color: rgb(255, 255, 255);\"><b>myorlen.pl/falszywe-maile</b></a></p>",
+      "DateCreatedUtc": "2025-04-17T11:16:43.247000Z",
+      "AlertType": 1
+    }
+  ]
+}

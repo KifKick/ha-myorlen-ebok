@@ -1,0 +1,8 @@
+{
+  "Invoice": {
+    "Number": "P/12345678/0010/26",
+    "AutomaticPaymentDate": "2026-11-15T00:00:00.000000Z",
+    "Status": "Paid",
+    "IsPaid": false
+  }
+}

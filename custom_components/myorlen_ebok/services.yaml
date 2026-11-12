@@ -1,0 +1,30 @@
+add_reading:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: myorlen_ebok
+    value:
+      required: true
+      example: 57
+      selector:
+        number:
+          min: 0
+          max: 999999
+          step: 1
+          mode: box
+          unit_of_measurement: m³
+    date:
+      selector:
+        date:
+    meter_reset:
+      default: false
+      selector:
+        boolean:
+    confirm_large_increase:
+      default: false
+      selector:
+        boolean:
+
+refresh:

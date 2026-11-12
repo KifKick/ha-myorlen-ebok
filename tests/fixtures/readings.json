@@ -1,0 +1,52 @@
+{
+  "MeterReadings": [
+    {
+      "Status": "ROZL",
+      "ReadingDateUtc": "2026-10-31T00:00:00.000000Z",
+      "Value": 56.0,
+      "Wear": 3.0,
+      "Type": "Receiver",
+      "MeterNumber": "8018000000000000000001"
+    },
+    {
+      "Status": "ROZL",
+      "ReadingDateUtc": "2026-09-30T00:00:00.000000Z",
+      "Value": 53.0,
+      "Wear": 3.0,
+      "Type": "Receiver",
+      "MeterNumber": "8018000000000000000001"
+    },
+    {
+      "Status": "ROZL",
+      "ReadingDateUtc": "2026-08-31T00:00:00.000000Z",
+      "Value": 50.0,
+      "Wear": 1.0,
+      "Type": "Receiver",
+      "MeterNumber": "8018000000000000000001"
+    },
+    {
+      "Status": "ROZL",
+      "ReadingDateUtc": "2026-07-27T00:00:00.000000Z",
+      "Value": 49.0,
+      "Wear": 0.0,
+      "Type": "Receiver",
+      "MeterNumber": "8018000000000000000001"
+    },
+    {
+      "Status": "ROZL",
+      "ReadingDateUtc": "2026-06-30T00:00:00.000000Z",
+      "Value": 49.0,
+      "Wear": 0.0,
+      "Type": "Receiver",
+      "MeterNumber": "8018000000000000000001"
+    },
+    {
+      "Status": "ROZL",
+      "ReadingDateUtc": "2026-05-31T00:00:00.000000Z",
+      "Value": 49.0,
+      "Wear": 0.0,
+      "Type": "Receiver",
+      "MeterNumber": "8018000000000000000001"
+    }
+  ]
+}

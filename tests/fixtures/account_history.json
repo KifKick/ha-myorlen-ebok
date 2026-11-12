@@ -1,0 +1,29 @@
+{
+  "HistoryList": [
+    {
+      "Date": "2026-11-10T11:09:07.223000Z",
+      "Type": "Zapłata za fakturę",
+      "Description": "Numer faktury: P/12345678/0010/26, kwota: 27.40"
+    },
+    {
+      "Date": "2026-10-31T09:17:02.833000Z",
+      "Type": "Podanie odczytu",
+      "Description": "Numer licznika: 8018000000000000000001, wartość1: 56.0, wartość2: , wartość3: "
+    },
+    {
+      "Date": "2026-10-06T09:11:09.863000Z",
+      "Type": "Zapłata za fakturę",
+      "Description": "Numer faktury: P/12345678/0009/26, kwota: 27.40"
+    },
+    {
+      "Date": "2026-10-05T08:27:11.173000Z",
+      "Type": "Podgląd PDF",
+      "Description": "Podgląd PDF dla dokumentu P/12345678/0009/26"
+    },
+    {
+      "Date": "2026-10-02T05:35:12.177000Z",
+      "Type": "Podanie odczytu",
+      "Description": "Numer licznika: 8018000000000000000001, wartość1: 53.0, wartość2: , wartość3: "
+    }
+  ]
+}

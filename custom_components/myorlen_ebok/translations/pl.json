@@ -1,0 +1,192 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "myORLEN eBOK",
+        "description": "Licznik gazu, faktury i płatności z ebok.myorlen.pl.",
+        "data": {
+          "auth_method": "Sposób logowania",
+          "username": "E-mail lub numer klienta",
+          "password": "Hasło"
+        },
+        "data_description": {
+          "auth_method": "Jak logujesz się na ebok.myorlen.pl: login i hasło eBOK albo konto ORLEN ID (może wysłać kod SMS).",
+          "username": "Login, którego używasz na ebok.myorlen.pl."
+        }
+      },
+      "mfa": {
+        "title": "Kod SMS",
+        "description": "ORLEN ID wysłał kod na Twój telefon. Wpisz najnowszy.",
+        "data": {
+          "mfa_code": "Kod"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Zaloguj ponownie",
+        "description": "Sesja eBOK wygasła. Podaj ponownie hasło.",
+        "data": {
+          "password": "Hasło"
+        }
+      },
+      "reconfigure": {
+        "title": "Zmień logowanie",
+        "data": {
+          "auth_method": "Sposób logowania",
+          "username": "E-mail lub numer klienta",
+          "password": "Hasło"
+        },
+        "data_description": {
+          "auth_method": "Jak logujesz się na ebok.myorlen.pl: login i hasło eBOK albo konto ORLEN ID (może wysłać kod SMS).",
+          "username": "Login, którego używasz na ebok.myorlen.pl."
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "eBOK odrzucił login lub hasło.",
+      "cannot_connect": "Brak połączenia z eBOK. Spróbuj później.",
+      "mfa_invalid": "Błędny kod. Wpisz najnowszy kod SMS.",
+      "mfa_expired": "Czas na kod SMS minął. Zaloguj się ponownie."
+    },
+    "abort": {
+      "already_configured": "To konto jest już skonfigurowane.",
+      "no_meters": "Na koncie nie ma licznika gazu.",
+      "wrong_account": "To inne konto eBOK.",
+      "reauth_successful": "Zalogowano ponownie.",
+      "reconfigure_successful": "Zmieniono logowanie."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcje myORLEN eBOK",
+        "data": {
+          "update_interval": "Interwał odświeżania"
+        },
+        "data_description": {
+          "update_interval": "Jak często pobierać dane z eBOK. Faktury i statusy płatności zmieniają się najwyżej kilka razy dziennie."
+        }
+      }
+    }
+  },
+  "selector": {
+    "auth_method": {
+      "options": {
+        "password": "Login i hasło eBOK",
+        "orlen_id": "ORLEN ID"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "reading": {
+        "name": "Odczyt licznika"
+      },
+      "reading_date": {
+        "name": "Data odczytu"
+      },
+      "to_pay": {
+        "name": "Do zapłaty"
+      },
+      "due_date": {
+        "name": "Termin płatności"
+      },
+      "last_invoice": {
+        "name": "Ostatnia faktura"
+      },
+      "cost_per_m3": {
+        "name": "Koszt za m³"
+      },
+      "balance": {
+        "name": "Saldo"
+      },
+      "last_payment": {
+        "name": "Ostatnia wpłata"
+      },
+      "bill_estimate": {
+        "name": "Szacowany rachunek"
+      }
+    },
+    "binary_sensor": {
+      "overdue": {
+        "name": "Zaległa płatność"
+      }
+    },
+    "calendar": {
+      "invoices": {
+        "name": "Faktury"
+      }
+    },
+    "event": {
+      "notices": {
+        "name": "Komunikaty eBOK",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "notice": "Komunikat"
+            }
+          }
+        }
+      }
+    },
+    "button": {
+      "refresh": {
+        "name": "Odśwież"
+      }
+    }
+  },
+  "services": {
+    "add_reading": {
+      "name": "Podaj odczyt licznika",
+      "description": "Wysyła stan licznika gazu do eBOK, jak formularz odczytu na stronie. Orlen wystawia fakturę na podstawie tej wartości - sprawdź ją z licznikiem.",
+      "fields": {
+        "device_id": {
+          "name": "Licznik",
+          "description": "Licznik gazu."
+        },
+        "value": {
+          "name": "Odczyt",
+          "description": "Stan licznika w m³, pełne jednostki jak na liczniku."
+        },
+        "date": {
+          "name": "Data",
+          "description": "Data odczytu; pusta oznacza dziś."
+        },
+        "meter_reset": {
+          "name": "Licznik wymieniony",
+          "description": "Zezwól na wartość niższą od ostatniego odczytu (nowy lub przekręcony licznik)."
+        },
+        "confirm_large_increase": {
+          "name": "Potwierdź duży przyrost",
+          "description": "Zezwól na wartość dużo wyższą od ostatniego odczytu."
+        }
+      }
+    },
+    "refresh": {
+      "name": "Odśwież",
+      "description": "Pobiera teraz dane z eBOK."
+    }
+  },
+  "exceptions": {
+    "not_a_meter": {
+      "message": "To urządzenie nie jest licznikiem myORLEN eBOK."
+    },
+    "not_loaded": {
+      "message": "Konto tego licznika nie jest załadowane."
+    },
+    "reading_lower": {
+      "message": "{value} m³ to mniej niż ostatni odczyt ({last} m³). Jeśli licznik wymieniono, zaznacz meter_reset."
+    },
+    "reading_too_high": {
+      "message": "{value} m³ to ponad {limit} m³ więcej niż ostatni odczyt ({last} m³). Jeśli to prawda, zaznacz confirm_large_increase."
+    },
+    "reading_rejected": {
+      "message": "eBOK odrzucił odczyt: {message}"
+    },
+    "auth_failed": {
+      "message": "Logowanie do eBOK wygasło; zaloguj się ponownie."
+    },
+    "request_failed": {
+      "message": "Zapytanie do eBOK nie powiodło się: {error}"
+    }
+  }
+}

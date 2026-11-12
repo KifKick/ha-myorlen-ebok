@@ -1,0 +1,59 @@
+{
+  "ChartData": {
+    "październik_2026": [
+      {
+        "Label": "październik 2026",
+        "ZoneLabel": null,
+        "Year": "2026",
+        "Value": 56.0,
+        "Wear": 3.0,
+        "Type": 2,
+        "ReadingDateUtc": "2026-10-31T00:00:00.000000Z",
+        "Period": "30.09.2026 - 31.10.2026"
+      }
+    ],
+    "wrzesień_2026": [
+      {
+        "Label": "wrzesień 2026",
+        "ZoneLabel": null,
+        "Year": "2026",
+        "Value": 53.0,
+        "Wear": 3.0,
+        "Type": 2,
+        "ReadingDateUtc": "2026-09-30T00:00:00.000000Z",
+        "Period": "31.08.2026 - 30.09.2026"
+      }
+    ],
+    "sierpień_2026": [
+      {
+        "Label": "sierpień 2026",
+        "ZoneLabel": null,
+        "Year": "2026",
+        "Value": 50.0,
+        "Wear": 1.0,
+        "Type": 2,
+        "ReadingDateUtc": "2026-08-31T00:00:00.000000Z",
+        "Period": "27.07.2026 - 31.08.2026"
+      }
+    ],
+    "listopad_2025": [
+      {
+        "Label": "listopad 2025",
+        "ZoneLabel": null,
+        "Year": "2025",
+        "Value": 51.0,
+        "Wear": 2.0,
+        "Type": 6,
+        "ReadingDateUtc": "2025-11-30T00:00:00.000000Z",
+        "Period": "30.11.2025 - 30.11.2025"
+      }
+    ]
+  },
+  "Code": 0,
+  "Message": null,
+  "DisplayToEndUser": false,
+  "EndUserMessage": null,
+  "TokenExpireDate": "2026-11-12T15:28:52.889141Z",
+  "TokenExpireDateUtc": "2026-11-12T14:28:52.889141Z",
+  "ConfigUpdateDateUtc": "2026-11-04T12:06:38.160000Z"
+}

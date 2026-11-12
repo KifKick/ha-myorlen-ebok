@@ -1,0 +1,13 @@
+{
+  "PpgList": [
+    {
+      "IdPPG": "8018000000000000000001",
+      "MeterNumber": "8018000000000000000001",
+      "ReadingDateUtc": "2026-10-31T00:00:00.000000Z",
+      "ReadingValue": 56.0,
+      "ContractNumber": "RW/UKPG/0001/2025",
+      "Tariff": "W-1.12T",
+      "IdLocal": "1000001"
+    }
+  ]
+}
