@@ -1,8 +1,15 @@
 {
   "domain": "myorlen_ebok",
   "name": "myORLEN eBOK",
-  "after_dependencies": ["recorder"],
-  "codeowners": ["@KifKick"],
+  "after_dependencies": [
+    "frontend",
+    "http",
+    "lovelace",
+    "recorder"
+  ],
+  "codeowners": [
+    "@KifKick"
+  ],
   "config_flow": true,
   "dependencies": [],
   "documentation": "https://github.com/KifKick/ha-myorlen-ebok",

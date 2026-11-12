@@ -17,6 +17,7 @@ from .config_flow import create_auth
 from .const import CONF_AUTH_METHOD, CONF_SESSION, DOMAIN, ORLEN_ID_KEEPALIVE
 from .coordinator import MyOrlenConfigEntry, MyOrlenCoordinator
 from .errors import MyOrlenAuthError, MyOrlenError
+from .frontend import async_register_card
 from .services import async_setup_services
 
 _LOGGER = logging.getLogger(__name__)
@@ -34,6 +35,7 @@ CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     async_setup_services(hass)
+    await async_register_card(hass)
     return True
 
 

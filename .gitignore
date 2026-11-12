@@ -5,3 +5,5 @@ __pycache__/
 .venv/
 .coverage
 *.har
+node_modules/
+frontend/tools/screenshot-harness/out/
