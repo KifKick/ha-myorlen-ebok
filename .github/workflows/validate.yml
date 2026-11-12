@@ -18,5 +18,3 @@ jobs:
       - uses: hacs/action@main
         with:
           category: integration
-          # Brand images ship with the integration (custom_components/.../brand).
-          ignore: brands
