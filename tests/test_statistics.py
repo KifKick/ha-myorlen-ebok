@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from datetime import UTC, datetime
 
+from homeassistant.util import dt as dt_util
+
 from custom_components.myorlen_ebok.models import MonthlyUsage
 from custom_components.myorlen_ebok.statistics import month_start, statistic_rows
 
@@ -13,8 +15,11 @@ def _month(day: datetime, reading: float) -> MonthlyUsage:
 
 
 def test_month_start_is_the_closed_month() -> None:
-    assert month_start(datetime(2026, 10, 31, tzinfo=UTC)) == datetime(2026, 10, 1, tzinfo=UTC)
-    assert month_start(datetime(2026, 11, 1, tzinfo=UTC)) == datetime(2026, 10, 1, tzinfo=UTC)
+    tz = dt_util.get_default_time_zone()
+    october = dt_util.as_utc(datetime(2026, 10, 1, tzinfo=tz))
+    # The last day of the month, and midnight on the 1st (closes the previous month).
+    assert month_start(datetime(2026, 10, 31, 12, tzinfo=tz)) == october
+    assert month_start(datetime(2026, 11, 1, tzinfo=tz)) == october
 
 
 def test_previous_meter_left_out() -> None:

@@ -104,7 +104,8 @@ async def test_add_reading(
     hass: HomeAssistant, config_entry: MockConfigEntry, mock_client: MagicMock
 ) -> None:
     await _setup(hass, config_entry)
-    device = dr.async_get(hass).async_get_device(identifiers={(DOMAIN, METER)})
+    (device,) = dr.async_entries_for_config_entry(dr.async_get(hass), config_entry.entry_id)
+    assert (DOMAIN, METER) in device.identifiers
 
     with pytest.raises(ServiceValidationError):
         await hass.services.async_call(
