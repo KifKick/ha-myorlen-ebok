@@ -149,10 +149,6 @@ data:
 
 Integracja odrzuca wartość niższą od ostatniego odczytu (chyba że `meter_reset: true` – licznik wymieniony) i wyższą o ponad 500 m³ (chyba że `confirm_large_increase: true`). Odpowiedź mówi, czy odczyt można jeszcze wycofać na stronie eBOK.
 
-## Przejście z „Orlen gas sensor” (pgnig_gas_sensor)
-
-Integracja jest niezależna i ma nowe identyfikatory encji. Po dodaniu jej usuń starą integrację i popraw automatyzacje oraz karty. Urządzenie jest zgłaszane do eBOK z tym samym identyfikatorem co w starej integracji, więc konto ORLEN ID nie powinno prosić o nowy kod SMS.
-
 ## Prywatność
 
 Login, hasło i (dla ORLEN ID) ciasteczka sesji są zapisane w konfiguracji Home Assistanta. Integracja łączy się wyłącznie z ebok.myorlen.pl i stroną logowania ORLEN ID. Diagnostyka ukrywa dane logowania, numery faktur, liczników, umów i rachunków.

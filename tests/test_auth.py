@@ -27,7 +27,7 @@ SMS_PAGE = """
 </form>"""
 
 
-def test_device_id_is_stable_and_matches_previous_integration() -> None:
+def test_device_id_is_stable_per_login() -> None:
     assert auth.device_id("user@example.com") == auth.device_id("user@example.com")
     assert auth.device_id("user@example.com") != auth.device_id("other@example.com")
     assert len(auth.device_id("user@example.com")) == 32

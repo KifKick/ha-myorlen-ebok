@@ -70,9 +70,9 @@ def device_id(username: str) -> str:
     """Stable device id per account.
 
     eBOK remembers a device by its cookie and only challenges an unknown one
-    with an SMS code. Derived from the login the same way the earlier
-    pgnig_gas_sensor integration did, so an account it already used is not
-    treated as a new device; hashed so the login itself is not sent.
+    with an SMS code. Derived from the login, so it survives re-authentication
+    and reinstalls; hashed so the login itself is not sent. The prefix must not
+    change: a different id is a new device to eBOK.
     """
     return hashlib.sha256(f"pgnig-ebok:{username}".encode()).hexdigest()[:32]
 
