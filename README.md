@@ -6,9 +6,11 @@ Integracja nie jest powiązana z ORLEN S.A. Korzysta z tego samego API co strona
 
 ## Instalacja
 
-[![Otwórz Home Assistanta i to repozytorium w HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=KifKick&repository=ha-myorlen-ebok&category=integration)
+[![Otwórz Home Assistanta i to repozytorium w Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=KifKick&repository=ha-myorlen-ebok&category=integration)
 
-Albo ręcznie: HACS → *Integracje* → menu ⋮ → *Własne repozytoria* → `https://github.com/KifKick/ha-myorlen-ebok`, kategoria *Integracja*. Zainstaluj **myORLEN eBOK** i zrestartuj Home Assistanta.
+Albo ręcznie: *Ustawienia → Marketplace* → menu ⋮ → *Dodaj z linku* → `https://github.com/KifKick/ha-myorlen-ebok`, kategoria *Integracja*. Dodanie własnego repozytorium wymaga połączonego konta GitHub w Marketplace. Zainstaluj **myORLEN eBOK** i zrestartuj Home Assistanta.
+
+Home Assistant starszy niż 2026.11 nie ma Marketplace: dodaj repozytorium w HACS (*Integracje* → menu ⋮ → *Własne repozytoria*).
 
 [![Otwórz Home Assistanta i zacznij dodawać integrację myORLEN eBOK.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=myorlen_ebok)
 
